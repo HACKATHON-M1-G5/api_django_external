@@ -17,4 +17,4 @@ COPY . /app/
 
 EXPOSE 8080
 
-ENTRYPOINT ["./entrypoint.sh"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]

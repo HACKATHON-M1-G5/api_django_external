@@ -26,7 +26,7 @@ document.getElementById('eventForm').addEventListener('submit', async (e) => {
     status: document.getElementById('status').value,
     score: document.getElementById('score').value || null
   };
-  const response = await fetch('http://localhost:8080/api/event/add-event/', {
+  const response = await fetch('https://api-django-external.onrender.com//api/event/add-event/', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(data)

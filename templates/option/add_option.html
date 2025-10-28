@@ -13,7 +13,7 @@ document.getElementById('optionForm').addEventListener('submit', async (e) => {
     name: document.getElementById('name').value,
     value: document.getElementById('value').value
   };
-  const response = await fetch('http://localhost:8080/api/option/add-option/', {
+  const response = await fetch('https://api-django-external.onrender.com//api/option/add-option/', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(data)
