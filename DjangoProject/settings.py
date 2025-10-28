@@ -31,7 +31,11 @@ SECRET_KEY = 'django-insecure-xbg8qubzje!a0gu24pvo7%9c!j^ksprxn+9+njc8u81n_5u2gl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'api-django-external.onrender.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
@@ -94,14 +98,15 @@ WSGI_APPLICATION = 'DjangoProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE'   : 'django.db.backends.postgresql',
-        'NAME'     : env('POSTGRES_DB',     default='DjangoProject'),
-        'USER'     : env('POSTGRES_USER',   default='root'),
-        'PASSWORD' : env('POSTGRES_PASSWORD', default='root'),
-        'HOST'     : env('POSTGRES_HOST',   default='localhost'),
-        'PORT'     : env('POSTGRES_PORT',   default='5436'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('POSTGRES_DB'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': os.environ.get('POSTGRES_HOST'),
+        'PORT': os.environ.get('POSTGRES_PORT', '5432'),
     }
 }
+
 
 
 # Password validation
