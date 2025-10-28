@@ -1,0 +1,30 @@
+<h2>Ajouter une Option</h2>
+<form id="optionForm">
+  <input type="text" id="name" placeholder="Nom" required />
+  <input type="text" id="value" placeholder="Valeur" required />
+  <button type="submit">Ajouter</button>
+</form>
+<div id="message"></div>
+
+<script>
+document.getElementById('optionForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = {
+    name: document.getElementById('name').value,
+    value: document.getElementById('value').value
+  };
+  const response = await fetch('http://localhost:8080/api/option/add-option/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  });
+  const msg = document.getElementById('message');
+  if(response.ok) {
+    const result = await response.json();
+    msg.innerHTML = `✅ Option ajoutée : ${result.name}`;
+    e.target.reset();
+  } else {
+    msg.innerHTML = `❌ Erreur : ${await response.text()}`;
+  }
+});
+</script>

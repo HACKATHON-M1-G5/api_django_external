@@ -1,0 +1,43 @@
+<h2>Ajouter un Event</h2>
+<form id="eventForm">
+  <input type="text" id="name" placeholder="Nom" required />
+  <input type="text" id="category" placeholder="ID catégorie" required />
+  <input type="datetime-local" id="start_at" required />
+  <input type="datetime-local" id="end_at_expected" required />
+  <select id="status">
+    <option value="pending">En attente</option>
+    <option value="in_progress">En cours</option>
+    <option value="completed">Terminé</option>
+    <option value="cancelled">Annulé</option>
+  </select>
+  <input type="number" step="0.01" id="score" placeholder="Score" />
+  <button type="submit">Ajouter</button>
+</form>
+<div id="message"></div>
+
+<script>
+document.getElementById('eventForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = {
+    name: document.getElementById('name').value,
+    category: document.getElementById('category').value,
+    start_at: document.getElementById('start_at').value,
+    end_at_expected: document.getElementById('end_at_expected').value,
+    status: document.getElementById('status').value,
+    score: document.getElementById('score').value || null
+  };
+  const response = await fetch('http://localhost:8080/api/event/add-event/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  });
+  const msg = document.getElementById('message');
+  if(response.ok) {
+    const result = await response.json();
+    msg.innerHTML = `✅ Event ajouté : ${result.name}`;
+    e.target.reset();
+  } else {
+    msg.innerHTML = `❌ Erreur : ${await response.text()}`;
+  }
+});
+</script>

@@ -153,8 +153,8 @@ REST_FRAMEWORK = {
 
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'API gestionAutomobile',
-    'DESCRIPTION': 'Documentation de l\'API pour le projet GestionAutomobile.',
+    'TITLE': 'API LoseAMax',
+    'DESCRIPTION': 'Documentation de l\'API pour le projet LoseAMax.',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
     'DEBUG': True,
