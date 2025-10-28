@@ -95,11 +95,11 @@ WSGI_APPLICATION = 'DjangoProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE'   : 'django.db.backends.postgresql',
-        'NAME'     : env('POSTGRES_DB',     default='DjangoProject'),
-        'USER'     : env('POSTGRES_USER',   default='root'),
-        'PASSWORD' : env('POSTGRES_PASSWORD', default='root'),
-        'HOST'     : env('POSTGRES_HOST',   default='localhost'),
-        'PORT'     : env('POSTGRES_PORT',   default='5436'),
+        'NAME'     : env('POSTGRES_DB'),
+        'USER'     : env('POSTGRES_USER'),
+        'PASSWORD' : env('POSTGRES_PASSWORD'),
+        'HOST'     : env('POSTGRES_HOST'),
+        'PORT'     : env('POSTGRES_PORT'),
     }
 }
 
