@@ -50,9 +50,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'drf_spectacular',
     'rest_framework',
-    'rest_framework.authtoken',
     'corsheaders',
     'app',
+    'app.event',
+    'app.option',
+    'app.category',
 ]
 
 MIDDLEWARE = [
@@ -93,7 +95,7 @@ WSGI_APPLICATION = 'DjangoProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE'   : 'django.db.backends.postgresql',
-        'NAME'     : env('POSTGRES_DB',     default='gestionAutomobile'),
+        'NAME'     : env('POSTGRES_DB',     default='DjangoProject'),
         'USER'     : env('POSTGRES_USER',   default='root'),
         'PASSWORD' : env('POSTGRES_PASSWORD', default='root'),
         'HOST'     : env('POSTGRES_HOST',   default='localhost'),
@@ -144,21 +146,15 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
+
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 
 }
 
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'API gestionAutomobile',
-    'DESCRIPTION': 'Documentation de l\'API pour le projet GestionAutomobile.',
+    'TITLE': 'API LoseAMax',
+    'DESCRIPTION': 'Documentation de l\'API pour le projet LoseAMax.',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
     'DEBUG': True,
