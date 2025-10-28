@@ -1,0 +1,67 @@
+[
+  {
+    "model": "event.event",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "PSG vs OM",
+      "start_at": "2025-10-30T19:45:00Z",
+      "end_at_expected": "2025-10-30T21:30:00Z",
+      "end_at_actual": null,
+      "status": "pending",
+      "score": null
+    }
+  },
+  {
+    "model": "event.event",
+    "pk": 2,
+    "fields": {
+      "category": 2,
+      "name": "Lakers vs Celtics",
+      "start_at": "2025-11-01T02:00:00Z",
+      "end_at_expected": "2025-11-01T04:30:00Z",
+      "end_at_actual": null,
+      "status": "pending",
+      "score": null
+    }
+  },
+  {
+    "model": "event.event",
+    "pk": 3,
+    "fields": {
+      "category": 3,
+      "name": "Roland-Garros - Finale Hommes",
+      "start_at": "2025-06-08T13:00:00Z",
+      "end_at_expected": "2025-06-08T17:00:00Z",
+      "end_at_actual": null,
+      "status": "completed",
+      "score": 3.2
+    }
+  },
+  {
+    "model": "event.event",
+    "pk": 4,
+    "fields": {
+      "category": 4,
+      "name": "CS2 Major - Grande Finale",
+      "start_at": "2025-09-15T18:00:00Z",
+      "end_at_expected": "2025-09-15T21:00:00Z",
+      "end_at_actual": "2025-09-15T21:05:00Z",
+      "status": "completed",
+      "score": 2.0
+    }
+  },
+  {
+    "model": "event.event",
+    "pk": 5,
+    "fields": {
+      "category": 5,
+      "name": "Prix d'Amérique 2025",
+      "start_at": "2025-01-26T15:30:00Z",
+      "end_at_expected": "2025-01-26T16:30:00Z",
+      "end_at_actual": null,
+      "status": "pending",
+      "score": null
+    }
+  }
+]
